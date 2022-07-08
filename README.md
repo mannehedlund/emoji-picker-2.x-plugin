@@ -28,6 +28,11 @@ Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmj
 npm install
 ```
 
+Make a copy of the example appConfig.js file.
+```bash
+cp public/appConfig.example.js public/appConfig.js
+```
+
 Next, please install the [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart) by running:
 
 ```bash
