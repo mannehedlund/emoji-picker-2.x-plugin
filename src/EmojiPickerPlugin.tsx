@@ -1,7 +1,7 @@
 import React from "react";
 import * as Flex from "@twilio/flex-ui";
 import { FlexPlugin } from "@twilio/flex-plugin";
-import { CustomizationProvider, PasteCustomCSS } from "@twilio-paste/core/customization"
+import { CustomizationProvider, PasteCustomCSS, CustomizationProviderProps } from "@twilio-paste/core/customization"
 
 import EmojiPicker from "./components/EmojiPicker/EmojiPicker";
 
@@ -27,8 +27,8 @@ export default class EmojiPickerPlugin extends FlexPlugin {
 
         flex.setProviders({
             CustomProvider: (RootComponent) => (props) => {
-                const pasteProviderProps = {
-                    baseTheme: props.theme?.isLight ? "default" : "dark" as "default" | "dark",
+                const pasteProviderProps: CustomizationProviderProps & { style: PasteCustomCSS } = {
+                    baseTheme: props.theme?.isLight ? "default" : "dark",
                     theme: props.theme?.tokens,
                     style: { minWidth: "100%", height: "100%" },
                     elements: {
@@ -45,7 +45,7 @@ export default class EmojiPickerPlugin extends FlexPlugin {
                             borderRightWidth: "borderWidth0",
                             paddingRight: "space0"
                         }
-                    } as Record<string, PasteCustomCSS>
+                    }
                 };
 
                 return (
