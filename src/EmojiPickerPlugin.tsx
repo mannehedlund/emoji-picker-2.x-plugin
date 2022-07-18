@@ -32,17 +32,20 @@ export default class EmojiPickerPlugin extends FlexPlugin {
                     theme: props.theme?.tokens,
                     style: { minWidth: "100%", height: "100%" },
                     elements: {
+                        HORIZONTAL_TAB_LIST_CHILD: {
+                            marginBottom: "space0"
+                        },
                         HORIZONTAL_TAB: {
                             minWidth: "sizeSquare50",
                             paddingTop: "space20",
                             paddingBottom: "space20"
-                        } as PasteCustomCSS,
+                        },
                         INPUT_PREFIX: {
                             backgroundColor: "transparent",
                             borderRightWidth: "borderWidth0",
                             paddingRight: "space0"
-                        } as PasteCustomCSS
-                    }
+                        }
+                    } as Record<string, PasteCustomCSS>
                 };
 
                 return (

@@ -1,4 +1,4 @@
-import { BoxStyleProps } from "@twilio-paste/core";
+import { BoxStyleProps, TextStyleProps } from "@twilio-paste/core";
 
 export const emojiRowContainerStyles: BoxStyleProps = {
     width: "100%",
@@ -26,8 +26,10 @@ export const emojiListContainerStyles: BoxStyleProps = {
 }
 
 export const searchInputContainerStyles: BoxStyleProps = {
-    marginLeft: "space30",
-    marginRight: "space30",
-    marginTop: "-12px" as any,
-    marginBottom: "space30"
+    margin: "space30"
+}
+
+export const tabTextStyles: TextStyleProps = {
+    color: "#606B85" as any,
+    fontSize: "fontSize10"
 }
