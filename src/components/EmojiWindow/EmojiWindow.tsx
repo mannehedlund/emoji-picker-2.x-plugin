@@ -1,12 +1,13 @@
 import { CSSProperties, useEffect, useState } from "react";
-import { Box, Input, Tab, TabList, Tabs } from "@twilio-paste/core";
+import { Box, Input, Tab, TabList, Tabs, Text } from "@twilio-paste/core";
 import { List } from "react-virtualized";
 import { SearchIcon } from "@twilio-paste/icons/esm/SearchIcon";
 
 import {
   emojiRowContainerStyles,
   emojiListContainerStyles,
-  searchInputContainerStyles
+  searchInputContainerStyles,
+  tabTextStyles
 } from "./EmojiWindow.Styles";
 import Emoji, { EmojiDetails } from "../Emoji/Emoji";
 import emojiData from "../../emojis.json";
@@ -86,7 +87,7 @@ const EmojiWindow = (props: EmojiWindowProps) => {
                         onClick={() => setSelectedCategory(EmojiCategory.all)}
                         title="All emojis"
                     >
-                        <span style={{ color: "#606B85", fontSize: "10px" }}>All</span>
+                        <Text {...tabTextStyles} as="span">All</Text>
                     </Tab>
                     <Tab
                         id={EmojiCategory.smileysPeople}
